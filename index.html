@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Country Info Service</title>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    main {
+      width: 90%;
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #6a0dad;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    
+    .search-box {
+      display: flex;
+      gap: 0.75rem;
+      margin: 2rem 0;
+      align-items: center;
+    }
+
+    input {
+      flex: 1;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input:focus {
+      border-color: #6a0dad;
+      box-shadow: 0 0 8px rgba(106, 13, 173, 0.2);
+    }
+
+    button {
+      background: #6a0dad;
+      border: none;
+      padding: 1rem 2rem;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-family: 'Poppins', sans-serif;
+      flex-shrink: 0;
+    }
+
+    button:hover {
+      background: #500a88;
+      transform: translateY(-2px);
+    }
+    
+    .result {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      line-height: 1.8;
+      text-align: left;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .result strong {
+      color: #6a0dad;
+    }
+
+    .flag {
+      width: 150px;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .info-line {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-line i {
+      color: #6a0dad;
+      width: 20px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  
+  <main>
+    <h1>Country Info Service</h1>
+    <p class="subtitle">Discover key information about any country in the world.</p>
+    
+    <div class="search-box">
+      <input type="text" id="countryInput" placeholder="Enter country name (e.g., Pakistan)">
+      <button onclick="getCountryInfo()">Search</button>
+    </div>
+
+    <div id="result" class="result" style="display: none;"></div>
+  </main>
+
+ <script src="script.js"></script>
+</body>
+</html>
